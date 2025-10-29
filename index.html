@@ -3,63 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shinuy Agência de Design</title>
+<title>Shinuy – Agência de Design Premium</title>
+<meta name="description" content="Agência de branding e identidade visual para autônomos e pequenas empresas que querem transformar suas marcas com excelência.">
+
+<!-- Favicon -->
+<link rel="icon" href="logo-shinuy.svg" type="image/x-icon">
+
 <style>
   :root {
-    --off-white: #F5F5F0;
-    --caramelo-fume: #C49E75;
-    --grafite: #333333;
-    --cor6f665b: #6F665B;
+    --offwhite: #f5f4f2;
+    --caramelo-fume: #bfa88a;
+    --grafite: #2e2e2e;
+    --areia-escura: #6f665b;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Lovan', sans-serif; background:var(--off-white); color:var(--grafite); line-height:1.6; overflow-x:hidden; }
+  body {
+    font-family:'Lovan', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: var(--offwhite);
+    color: var(--grafite);
+    overflow-x: hidden;
+  }
 
-  /* Header */
-  header { display:flex; justify-content:space-between; align-items:center; padding:2rem 5%; position:sticky; top:0; z-index:100; background:var(--off-white); box-shadow:0 2px 5px rgba(0,0,0,0.05);}
-  header .logo { font-size:1.8rem; font-weight:bold; color:var(--grafite);}
-  nav a { margin-left:2rem; text-decoration:none; color:var(--grafite); font-weight:500; transition:0.3s;}
-  nav a:hover { color:var(--caramelo-fume);}
+  a { text-decoration: none; }
 
-  /* Sections */
+  header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1.5rem 5%;
+    position: sticky;
+    top:0;
+    background: var(--offwhite);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    z-index: 100;
+  }
+  header .logo img { height: 80px; }
+
+  nav a { margin-left: 2rem; color: var(--grafite); font-weight:500; transition:0.3s; }
+  nav a:hover { color: var(--caramelo-fume); }
+
   section { padding:5rem 5%; opacity:0; transform:translateY(50px); transition: all 0.8s ease-in-out; }
   section.visible { opacity:1; transform:translateY(0); }
 
   /* Hero */
-  .hero { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; min-height:90vh; position:relative; }
-  .hero h1 { font-size:3rem; color:var(--grafite); margin-bottom:1rem; }
+  .hero { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; min-height:90vh; }
+  .hero h1 { font-size:3rem; margin-bottom:1rem; }
   .hero .typed-text { border-right: .15em solid var(--caramelo-fume); white-space: nowrap; overflow: hidden; }
-  .hero p { font-size:1.2rem; color:var(--cor6f665b); margin-bottom:2rem; max-width:600px; }
-  .btn { background:var(--caramelo-fume); color:var(--off-white); padding:1rem 2rem; border:none; border-radius:5px; font-size:1rem; cursor:pointer; transition:0.3s; }
-  .btn:hover { background:var(--grafite); animation: pulse 1s infinite; }
+  .hero p { font-size:1.2rem; color: var(--areia-escura); margin-bottom:2rem; max-width:600px; }
+  .btn { background-color: var(--areia-escura); color: var(--offwhite); padding:1rem 2rem; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition:0.3s; }
+  .btn:hover { background-color: var(--caramelo-fume); animation: pulse 1s infinite; }
 
   /* Cards */
   .services, .portfolio, .depoimentos { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-top:2rem; }
-  .card { background:var(--off-white); padding:2rem; border:1px solid var(--cor6f665b); border-radius:10px; transition:all 0.4s ease; cursor:pointer; }
+  .card { background:var(--offwhite); padding:2rem; border:1px solid var(--areia-escura); border-radius:10px; transition:all 0.4s ease; cursor:pointer; }
   .card:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.1); border-color:var(--caramelo-fume); }
 
-  h2 { font-size:2rem; margin-bottom:1rem; color:var(--grafite); }
+  h1 { font-size:3rem; margin-bottom:1rem; }
+  h2 { font-size:2.2rem; margin-bottom:1rem; color: var(--grafite); }
+  h3 { font-size:1.8rem; margin-bottom:0.5rem; }
+  p  { font-size:1.2rem; }
 
   /* Footer */
-  footer { padding:3rem 5%; text-align:center; background:var(--off-white); border-top:1px solid var(--cor6f665b);}
-  footer p { color:var(--cor6f665b); margin-bottom:0.5rem; }
-  footer a { color:var(--grafite); text-decoration:none; margin:0 0.5rem; transition:0.3s;}
-  footer a:hover { color:var(--caramelo-fume); }
+  footer { padding:3rem 5%; text-align:center; background: var(--offwhite); border-top:1px solid var(--areia-escura); }
+  footer p { color: var(--areia-escura); margin-bottom:0.5rem; }
+  footer a { color: var(--grafite); margin:0 0.5rem; transition:0.3s; }
+  footer a:hover { color: var(--caramelo-fume); }
 
   /* Botão WhatsApp fixo */
-  #whatsapp-btn { position:fixed; bottom:20px; right:20px; background:var(--caramelo-fume); color:var(--off-white); border:none; padding:1rem 1.2rem; border-radius:50px; font-size:1.2rem; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition:0.3s; z-index:1000;}
-  #whatsapp-btn:hover { background:var(--grafite); }
+  #whatsapp-btn {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background: var(--caramelo-fume);
+    color: var(--offwhite);
+    border:none;
+    padding:1.2rem 1.6rem;
+    border-radius:50px;
+    font-size:1.4rem;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    z-index:1000;
+  }
+  #whatsapp-btn:hover { background: var(--grafite); }
 
-  /* Animations */
-  @keyframes pulse { 0% { transform:scale(1);} 50% { transform:scale(1.05);} 100% { transform:scale(1);} }
+  @keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
 
-  @media(max-width:768px){ .hero h1{font-size:2.2rem;} .hero p{font-size:1rem;} }
+  @media(max-width:768px){
+    h1 { font-size:2.2rem; }
+    h2 { font-size:1.8rem; }
+    h3 { font-size:1.5rem; }
+    p { font-size:1rem; }
+  }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">Shinuy</div>
+  <div class="logo">
+    <img src="logo-shinuy.svg" alt="Logo Shinuy">
+  </div>
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
@@ -116,7 +162,7 @@
 
 <section id="contato">
   <h2>Pronta para transformar sua marca?</h2>
-  <button class="btn" onclick="window.location.href='https://wa.me/seunumero'">Fale com a Shinuy</button>
+  <button class="btn" onclick="window.location.href='https://wa.me/message/UDASWXIVVZNLI1'">Fale com a Shinuy</button>
 </section>
 
 <footer>
@@ -128,7 +174,7 @@
 </footer>
 
 <!-- Botão WhatsApp fixo -->
-<button id="whatsapp-btn" onclick="window.location.href='https://wa.me/seunumero'">WhatsApp</button>
+<button id="whatsapp-btn" onclick="window.location.href='https://wa.me/message/UDASWXIVVZNLI1'">WhatsApp</button>
 
 <script>
   // Fade-in ao scroll
@@ -159,3 +205,4 @@
 
 </body>
 </html>
+
