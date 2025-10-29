@@ -5,107 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shinuy – Agência de Design Premium</title>
 <meta name="description" content="Agência de branding e identidade visual para autônomos e pequenas empresas que querem transformar suas marcas com excelência.">
-
-<!-- Favicon -->
 <link rel="icon" href="logo-shinuy.svg" type="image/x-icon">
 
 <style>
-  :root {
-    --offwhite: #f5f4f2;
-    --caramelo-fume: #bfa88a;
-    --grafite: #2e2e2e;
-    --areia-escura: #6f665b;
-  }
+:root {
+  --offwhite: #f5f4f2;
+  --caramelo-fume: #bfa88a;
+  --grafite: #2e2e2e;
+  --areia-escura: #6f665b;
+}
 
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family:'Lovan', sans-serif;
-    font-size: 18px;
-    line-height: 1.8;
-    background-color: var(--offwhite);
-    color: var(--grafite);
-    overflow-x: hidden;
-  }
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Lovan', sans-serif;
+  font-size:20px;
+  line-height:1.9;
+  color:var(--grafite);
+  background-color:var(--offwhite);
+  scroll-behavior: smooth;
+}
+a { text-decoration:none; }
 
-  a { text-decoration: none; }
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 5%;
+  position:sticky;
+  top:0;
+  background: var(--offwhite);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  z-index:100;
+}
+header .logo img { height:90px; }
+nav a { margin-left:2rem; font-size:1.2rem; font-weight:600; color:var(--grafite); transition:0.3s; }
+nav a:hover { color: var(--caramelo-fume); }
 
-  header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1.5rem 5%;
-    position: sticky;
-    top:0;
-    background: var(--offwhite);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    z-index: 100;
-  }
-  header .logo img { height: 80px; }
+/* Hero */
+.hero {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  min-height:90vh;
+  padding:0 5%;
+}
+.hero-text { max-width:600px; }
+.hero-text h1 { font-size:4rem; margin-bottom:1rem; line-height:1.2; }
+.hero-text p { font-size:1.5rem; color: var(--areia-escura); margin-bottom:2rem; }
+.btn { background-color: var(--areia-escura); color: var(--offwhite); padding:1.2rem 2.5rem; border:none; border-radius:50px; font-size:1.4rem; cursor:pointer; transition:0.3s; }
+.btn:hover { background-color: var(--caramelo-fume); }
 
-  nav a { margin-left: 2rem; color: var(--grafite); font-weight:500; transition:0.3s; }
-  nav a:hover { color: var(--caramelo-fume); }
+/* Hero Image */
+.hero img {
+  width:350px;
+  max-width:40%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
 
-  section { padding:5rem 5%; opacity:0; transform:translateY(50px); transition: all 0.8s ease-in-out; }
-  section.visible { opacity:1; transform:translateY(0); }
+/* Sections */
+section {
+  padding:6rem 5%;
+}
+h2 { font-size:2.8rem; margin-bottom:1.5rem; color:var(--grafite); }
+h3 { font-size:2rem; margin-bottom:0.8rem; }
+p { font-size:1.4rem; margin-bottom:1rem; }
 
-  /* Hero */
-  .hero { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; min-height:90vh; }
-  .hero h1 { font-size:3rem; margin-bottom:1rem; }
-  .hero .typed-text { border-right: .15em solid var(--caramelo-fume); white-space: nowrap; overflow: hidden; }
-  .hero p { font-size:1.2rem; color: var(--areia-escura); margin-bottom:2rem; max-width:600px; }
-  .btn { background-color: var(--areia-escura); color: var(--offwhite); padding:1rem 2rem; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition:0.3s; }
-  .btn:hover { background-color: var(--caramelo-fume); animation: pulse 1s infinite; }
+/* Cards */
+.services, .portfolio {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+}
+.card {
+  background:var(--offwhite);
+  padding:2rem;
+  border:1px solid var(--areia-escura);
+  border-radius:15px;
+  transition: all 0.4s ease;
+  cursor:pointer;
+}
+.card:hover { transform:translateY(-8px); border-color:var(--caramelo-fume); box-shadow:0 10px 25px rgba(0,0,0,0.1); }
 
-  /* Cards */
-  .services, .portfolio, .depoimentos { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-top:2rem; }
-  .card { background:var(--offwhite); padding:2rem; border:1px solid var(--areia-escura); border-radius:10px; transition:all 0.4s ease; cursor:pointer; }
-  .card:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.1); border-color:var(--caramelo-fume); }
+/* Footer */
+footer { padding:3rem 5%; text-align:center; background:var(--offwhite); border-top:1px solid var(--areia-escura); }
+footer p { margin-bottom:0.5rem; }
+footer a { color: var(--grafite); margin:0 0.5rem; font-weight:600; transition:0.3s; }
+footer a:hover { color:var(--caramelo-fume); }
 
-  h1 { font-size:3rem; margin-bottom:1rem; }
-  h2 { font-size:2.2rem; margin-bottom:1rem; color: var(--grafite); }
-  h3 { font-size:1.8rem; margin-bottom:0.5rem; }
-  p  { font-size:1.2rem; }
+/* WhatsApp Fix */
+#whatsapp-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background: var(--caramelo-fume);
+  color: var(--offwhite);
+  border:none;
+  padding:1.4rem 2rem;
+  border-radius:50px;
+  font-size:1.5rem;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.25);
+  z-index:1000;
+}
+#whatsapp-btn:hover { background: var(--grafite); }
 
-  /* Footer */
-  footer { padding:3rem 5%; text-align:center; background: var(--offwhite); border-top:1px solid var(--areia-escura); }
-  footer p { color: var(--areia-escura); margin-bottom:0.5rem; }
-  footer a { color: var(--grafite); margin:0 0.5rem; transition:0.3s; }
-  footer a:hover { color: var(--caramelo-fume); }
-
-  /* Botão WhatsApp fixo */
-  #whatsapp-btn {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background: var(--caramelo-fume);
-    color: var(--offwhite);
-    border:none;
-    padding:1.2rem 1.6rem;
-    border-radius:50px;
-    font-size:1.4rem;
-    cursor:pointer;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    z-index:1000;
-  }
-  #whatsapp-btn:hover { background: var(--grafite); }
-
-  @keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
-
-  @media(max-width:768px){
-    h1 { font-size:2.2rem; }
-    h2 { font-size:1.8rem; }
-    h3 { font-size:1.5rem; }
-    p { font-size:1rem; }
-  }
+/* Responsividade */
+@media(max-width:1024px){
+  .hero { flex-direction:column; text-align:center; }
+  .hero img { max-width:70%; margin-top:2rem; }
+  .hero-text h1 { font-size:3rem; }
+  .hero-text p { font-size:1.3rem; }
+}
+@media(max-width:768px){
+  h2 { font-size:2.2rem; }
+  h3 { font-size:1.8rem; }
+  p { font-size:1.2rem; }
+  .btn { font-size:1.2rem; padding:1rem 2rem; }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo-shinuy.svg" alt="Logo Shinuy">
-  </div>
+  <div class="logo"><img src="logo-shinuy.svg" alt="Logo Shinuy"></div>
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
@@ -115,36 +142,30 @@
 </header>
 
 <section class="hero" id="hero">
-  <h1><span class="typed-text"></span></h1>
-  <p>Branding, identidade visual e design estratégico para empresas que querem evoluir.</p>
-  <button class="btn" onclick="window.location.href='#contato'">Quero minha marca transformada</button>
+  <div class="hero-text">
+    <h1>Transformamos marcas em experiências que inspiram confiança e propósito</h1>
+    <p>A Shinuy é sua agência de design premium focada em branding, identidade visual e design estratégico.</p>
+    <button class="btn" onclick="window.location.href='#contato'">Quero minha marca transformada</button>
+  </div>
+  <img src="sua-foto.jpg" alt="Foto Lays">
 </section>
 
 <section id="sobre">
-  <h2>Quem somos</h2>
-  <p>A Shinuy é uma agência de design premium focada em <strong>transformação, detalhe e excelência</strong>. Ajudamos autônomos e pequenas empresas a criar marcas fortes e sofisticadas.</p>
+  <h2>Sobre a Shinuy</h2>
+  <p>Somos especialistas em criar marcas fortes, sofisticadas e transformadoras. Cada detalhe é pensado para gerar confiança e elevar o seu negócio.</p>
 </section>
 
 <section id="servicos">
-  <h2>Nossos Serviços</h2>
+  <h2>Serviços</h2>
   <div class="services">
-    <div class="card">
-      <h3>Branding & Naming</h3>
-      <p>Criamos nomes e identidades estratégicas que traduzem a essência da sua marca.</p>
-    </div>
-    <div class="card">
-      <h3>Identidade Visual</h3>
-      <p>Design premium de logos, cores e tipografia para transmitir confiança e sofisticação.</p>
-    </div>
-    <div class="card">
-      <h3>Social Media & Tráfego Pago</h3>
-      <p>Estratégias digitais que potencializam sua presença online e atraem clientes ideais.</p>
-    </div>
+    <div class="card"><h3>Branding & Naming</h3><p>Criamos nomes e identidades estratégicas que traduzem a essência da sua marca.</p></div>
+    <div class="card"><h3>Identidade Visual</h3><p>Design premium de logos, cores e tipografia para transmitir confiança e sofisticação.</p></div>
+    <div class="card"><h3>Social Media & Tráfego Pago</h3><p>Estratégias digitais que potencializam sua presença online e atraem clientes ideais.</p></div>
   </div>
 </section>
 
 <section id="portfolio">
-  <h2>Nosso Trabalho</h2>
+  <h2>Portfólio</h2>
   <div class="portfolio services">
     <div class="card">Projeto 1</div>
     <div class="card">Projeto 2</div>
@@ -152,16 +173,9 @@
   </div>
 </section>
 
-<section class="depoimentos">
-  <h2>O que nossos clientes dizem</h2>
-  <div class="services">
-    <div class="card">“A Shinuy transformou nossa marca de forma incrível!” – Cliente A</div>
-    <div class="card">“Profissionalismo e cuidado em cada detalhe.” – Cliente B</div>
-  </div>
-</section>
-
 <section id="contato">
-  <h2>Pronta para transformar sua marca?</h2>
+  <h2>Entre em contato</h2>
+  <p>Pronta para transformar sua marca? Clique no botão abaixo e fale comigo via WhatsApp.</p>
   <button class="btn" onclick="window.location.href='https://wa.me/message/UDASWXIVVZNLI1'">Fale com a Shinuy</button>
 </section>
 
@@ -173,36 +187,22 @@
   </p>
 </footer>
 
-<!-- Botão WhatsApp fixo -->
 <button id="whatsapp-btn" onclick="window.location.href='https://wa.me/message/UDASWXIVVZNLI1'">WhatsApp</button>
 
 <script>
-  // Fade-in ao scroll
+  // Fade-in seções ao scroll
   const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.2 });
-  sections.forEach(section => observer.observe(section));
-
-  // Typing effect
-  const typedText = document.querySelector('.typed-text');
-  const textArray = ["Transformamos marcas em experiências que inspiram confiança e propósito"];
-  let arrayIndex=0, charIndex=0;
-
-  function type(){
-    if(charIndex < textArray[arrayIndex].length){
-      typedText.textContent += textArray[arrayIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type,50);
-    }
-  }
-  document.addEventListener("DOMContentLoaded", type);
+  },{threshold:0.2});
+  sections.forEach(section=>observer.observe(section));
 </script>
 
 </body>
 </html>
+
 
